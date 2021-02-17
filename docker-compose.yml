@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+    # service
+    service:
+        build:
+            context: .
+            dockerfile: service/Dockerfile
+        ports:
+            - "8080:8080"
+        restart: unless-stopped
+        container_name: service
+        networks:
+            - backend
+
+networks:
+    backend:
+        driver: bridge
+        ipam:
+            config:
+                - subnet: 172.14.57.0/24
