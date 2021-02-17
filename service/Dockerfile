@@ -6,6 +6,7 @@ LABEL maintainer="Sergey Denisov <DenisovS21@gmail.com>"
 
 RUN apk update && \
     apk upgrade && \
+    apk add git && \
     apk add ca-certificates && \
     update-ca-certificates && \
     apk add tzdata
