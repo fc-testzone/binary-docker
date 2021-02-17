@@ -17,6 +17,7 @@ ENV TZ=Asia/Novosibirsk
 WORKDIR /root/
 
 RUN wget https://github.com/fc-testzone/binary-storage/raw/main/binary-service
+RUN chmod +x binary-service
 RUN mkdir /var/log/apiserver/
 
 CMD ["./binary-service"]
